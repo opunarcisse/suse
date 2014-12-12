@@ -1,0 +1,52 @@
+<%- model_class = Team -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name_of_team) %>:</strong></dt>
+  <dd><%= @team.name_of_team %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type_of_team) %>:</strong></dt>
+  <dd><%= @team.type_of_team %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:number_of_members) %>:</strong></dt>
+  <dd><%= @team.number_of_members %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @team.description %></dd>
+</dl>
+
+
+
+
+
+<%= link_to t('.back', :default => t("helpers.links.list of teams")),
+              teams_path, :class => 'btn btn-default btn-xs'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit team")),
+              edit_team_path(@team), :class => 'btn btn-warning btn-xs' %>
+<%= link_to t('.edit', :default => t("helpers.links.Attribute tasks")),
+                     team_teamtasks_path(@team), :class => 'btn btn-warning btn-xs' %>
+
+
+
+<h2>  Task history </h2>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> TASK DATA </th>
+       <th> TASK DESCRIPTION </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Teamtask.where(taskable_id: @team.id).each do |task| %>
+      <tr>
+        <td> <b>  Name: </b> <%= task.name %>  </br>  
+        <i> <b> Type: </b>  <%= task.type %>   </br>
+         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i> </td>
+
+         <td>  <%= simple_format  task.description  %> 
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,35 @@
+<%- model_class = Team -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Count </th>
+      <th> Name </th>
+      <th> Number </th>
+      <th> Registed </th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= link_to team.id, team_path(team) %></td>
+        <td><%= team.name_of_team %></td>
+        <td><%= team.number_of_members %></td>
+        <td><%= team.created_at.strftime("%b %d %Y, %H %M") %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.details")),
+                      team_path(team), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.Tasks")),
+                     team_teamtasks_path(team), :class => 'btn btn-warning btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.Add team")),
+            new_team_path,
+            :class => 'btn btn-primary' %>

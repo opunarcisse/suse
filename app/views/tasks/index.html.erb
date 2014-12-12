@@ -1,0 +1,97 @@
+
+
+
+
+
+<h1 style="text-align: center;">  <%= " Tasks for #{@taskable.name_of_team}"%> </h1>
+ <h3 style="text-align: center;">  <%=" Team of #{@taskable.number_of_members} members"%> </h3> 
+
+<h1 style="color: white;"> . </h1>
+
+<h2>  Attribute task </h2>
+
+
+  <%= simple_form_for [@taskable, Task.new], :html => { :class => "form-horizontal booking" } do |f| %>
+  <% if @taskable.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@taskable.errors.count, "error") %> prohibited this booking from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @taskable.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+
+
+
+  <div class="form-group">
+    <div class="col-lg-8">
+      <%= f.text_field :name, :class => 'form-control' , placeholder: 'Names of task '%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-8">
+      <%= f.text_field :type, :class => 'form-control' , placeholder: 'Type of task'%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-8">
+      <%= f.date_field :dateline, :class => 'form-control', placeholder: 'eg. +23754714424' %>
+    </div>
+   </div>
+
+  <div class="form-group">
+    <div class="col-lg-8">
+      <%= f.time_field :timeline, :class => 'form-control', placeholder: 'eg. F546H7878J89' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-8">
+      <%= f.text_area :description, :class => 'form-control', placeholder: 'Description of task' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-0 col-lg-8">
+      <%= f.button :submit, "Book Ticket", :class => 'btn btn-primary' %> 
+      <%= link_to t('.View team', :default => t("helpers.links.View team")),
+         team_path(params[:team_id]), :class => 'btn btn-info' %> 
+    </div>
+   </div>
+<% end %>
+
+
+
+<h2>  Task history </h2>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Task data </th>
+       <th> Task details </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td>  <b> <%= task.name %>, </b>    
+        <i>  Type <%= task.type %> </i>  </br>
+         Dateline: <i> <%= task.timeline %>  </i> </td>
+
+         <td> <b> Description: </b> <%= task.description  %> 
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

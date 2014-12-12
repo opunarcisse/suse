@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_of_team: MyString
+  type_of_team: MyText
+  number_of_members: 1
+  description: MyText
+
+two:
+  name_of_team: MyString
+  type_of_team: MyText
+  number_of_members: 1
+  description: MyText

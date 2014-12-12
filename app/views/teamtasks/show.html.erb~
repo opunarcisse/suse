@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @teamtask.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @teamtask.type %>
+</p>
+
+<p>
+  <strong>Dateline:</strong>
+  <%= @teamtask.dateline %>
+</p>
+
+<p>
+  <strong>Timeline:</strong>
+  <%= @teamtask.timeline %>
+</p>
+
+<p>
+  <strong>Taskable:</strong>
+  <%= @teamtask.taskable_id %>
+</p>
+
+<p>
+  <strong>Taskable type:</strong>
+  <%= @teamtask.taskable_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @teamtask.description %>
+</p>
+
+<%= link_to 'Edit', edit_teamtask_path(@teamtask) %> |
+<%= link_to 'Back', teamtasks_path %>

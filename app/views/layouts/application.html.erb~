@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youdigo? Home</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+
+
+</head>
+<body>
+
+   <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li> <%= link_to "Home page", :root%> </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Start-allover? <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li> <%= link_to "Back to Home" , :root %></li>
+                    <li><a href="#">Feedbacks</a></li>
+                  </ul>
+                </li>
+		
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+<div class="row"> 
+</br> </br>
+<div class="col-md-3"> 
+<h1>  ONE-STOP </h1> 
+
+<h3> 
+A centralized online travel booking in Cameroon.  
+ </h3>
+</div>
+
+<div class="col-md-6" styele="float: centre; "> 
+<%= yield %>
+ </div>
+
+<div class="col-md-3 img-rounded" id="large-pannel"> 
+<h1>Your participation counts</h1>
+
+
+
+<p> Travel agencies can register and advertise their schedules for uses to either book and buy tickets directly.  This solution benefits the travelers as well as the travel agencies in several ways; time saving, planning your trip in advance, operational cost reduction, better visibility and improve sales, to name these few.  
+</p> 
+
+<p> This target solution is tailored for the Cameroonian markets as a pilot project and it is optimized to fit into most screen sizes.    
+</p>
+
+<p> For more information, please contact Opu Narcisse, GSM: +2375471-4424, opunarcisse[at]gmail.com 
+</p>
+</div>
+
+ </div>
+ 
+ <div class="row img-rounded" id="footer-start" border-top="solid 1px #333; " style="border-top: sold 1px #333;"> 
+ <div class="col-md-2" id="first"> 
+<h4>  Swagger</h4> 
+<p> Book in style and travel with swag! </p>
+
+</div>
+ <div class="col-md-8" id="second"> 
+<h3>  Partners </h3> 
+<p> Youdigo is privileged to work with some illustrious partners in enhancing our services.  </p>
+
+
+</div>
+ <div class="col-md-2" id="third"> 
+
+
+
+</div>
+
+ 
+ 
+
+ </div>
+ 
+ 
+</div>
+</div>
+ </div>
+
+ </div>
+
+</body>
+</html>

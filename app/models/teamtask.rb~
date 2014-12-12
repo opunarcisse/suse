@@ -1,0 +1,5 @@
+class Teamtask < ActiveRecord::Base
+
+belongs_to :taskable, :polymorphic => true 
+
+end
