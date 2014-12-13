@@ -44,8 +44,7 @@
         <i> <b> Type: </b>  <%= task.type %>   </br>
          Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i> </td>
 
-         <td>  <%= simple_format  task.description  %> 
-          </td>
+         <td>  <%=  task.description  %>  </td>
       </tr>
     <% end %>
   </tbody>

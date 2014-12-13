@@ -62,7 +62,7 @@
 
   <div class="form-group">
     <div class="col-lg-offset-0 col-lg-8">
-      <%= f.button :submit, "Book Ticket", :class => 'btn btn-primary' %> 
+      <%= f.button :submit, "Save task", :class => 'btn btn-primary' %> 
       <%= link_to t('.View team', :default => t("helpers.links.View team")),
          team_path(params[:team_id]), :class => 'btn btn-info' %> 
     </div>
@@ -88,8 +88,7 @@
         <i> <b> Type: </b>  <%= task.type %>   </br>
          Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i> </td>
 
-         <td>  <%=  task.description  %> 
-          </td>
+         <td>  <%= task.description  %> </td>
       </tr>
     <% end %>
   </tbody>
