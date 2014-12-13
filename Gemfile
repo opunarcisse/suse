@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 
+#
+# this little app was developed by Opu Narcisse (opunarcisse@gmail.com) 
+# for the position of the senior rails developer at SUSE Germany
+#
+
+ruby "1.9.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
@@ -30,15 +36,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
+ gem 'rails_12factor' 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'therubyracer',  platforms: :ruby # for bootstrap
+# for bootstrap
+gem 'therubyracer',  platforms: :ruby 
 
 # for bootstrap
 gem 'less-rails' 
