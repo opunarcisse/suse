@@ -58,7 +58,7 @@ A centralized online travel booking in Cameroon.
  </h3>
 </div>
 
-<div class="col-md-6" styele="float: centre; "> 
+<div class="col-md-6"> 
 <%= yield %>
  </div>
 
