@@ -85,11 +85,14 @@
     <% @teamtasks.each do |task| %>
       <tr>
         <td> <b>  Name: </b> <%= task.name %>  </br>  
-        <i> <b> Type: </b>  <%= task.type %>   </br>
-         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i> </td>
+        <i> <b> Type: </b>  <%= task.type %>  
+</br>  
+         <p>  <%= simple_format task.description  %> </p>
 
-         <td>  <%= task.description  %> 
-          </td>
+         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i>
+</td>
+
+
       </tr>
     <% end %>
   </tbody>

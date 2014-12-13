@@ -32,19 +32,20 @@
 
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th> TASK DATA </th>
-       <th> TASK DESCRIPTION </th>
-    </tr>
+
   </thead>
   <tbody>
     <% Teamtask.where(taskable_id: @team.id).each do |task| %>
       <tr>
         <td> <b>  Name: </b> <%= task.name %>  </br>  
-        <i> <b> Type: </b>  <%= task.type %>   </br>
-         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i> </td>
+        <i> <b> Type: </b>  <%= task.type %>  
+ </br>
+         <p>  <%= simple_format task.description  %>  </p>
 
-         <p>  <%=  task.description  %>  </p>
+         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i>
+</td>
+
+
       </tr>
     <% end %>
   </tbody>
