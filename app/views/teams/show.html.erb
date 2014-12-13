@@ -35,14 +35,13 @@
 
   </thead>
   <tbody>
-    <% Teamtask.where(taskable_id: @team.id).each do |task| %>
+    <% Teamtask.where(taskable_id: @team.id).each_with_index do |task, index| %>
       <tr>
-        <td> <b>  Name: </b> <%= task.name %>  </br>  
-        <i> <b> Type: </b>  <%= task.type %>  
+        <td> <b>  Task <%= index + 1 %>: </b> <%= task.name %>,  <%= task.type %>  
  </br>
          <p>  <%= simple_format task.description  %>  </p>
 
-         Dateline: <i> <%=  task.dateline.strftime("%b %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i>
+         Dateline: <i> <%=  task.dateline.strftime("%B %d, %Y") %> at <%= task.timeline.strftime("%H %M") %>  </i>
 </td>
 
 
