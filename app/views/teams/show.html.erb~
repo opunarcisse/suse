@@ -23,7 +23,7 @@
 <%= link_to t('.edit', :default => t("helpers.links.edit team")),
               edit_team_path(@team), :class => 'btn btn-warning btn-xs' %>
 <%= link_to t('.edit', :default => t("helpers.links.Attribute tasks")),
-                     team_teamtasks_path(@team), :class => 'btn btn-warning btn-xs' %>
+                     team_teamtasks_path(@team), :class => 'btn btn-success btn-xs' %>
 
 
 

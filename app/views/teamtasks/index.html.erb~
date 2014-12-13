@@ -56,7 +56,7 @@
 
   <div class="form-group">
     <div class="col-lg-11">
-      <%= f.text_area :description, :class => 'form-control', placeholder: 'Description of task', :size => "10x20" %>
+      <%= f.text_area :description, :class => 'form-control', placeholder: 'Description of task', :size => "10x10" %>
     </div>
   </div>
 
