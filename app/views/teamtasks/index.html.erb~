@@ -43,16 +43,14 @@
   </div>
 
   <div class="form-group">
-    <div class="col-lg-8">
+   <%= f.label "Dateline:", :class => 'col-lg-2' %>
+    <div class="col-lg-5">
       <%= f.date_field :dateline, :class => 'form-control', placeholder: 'eg. +23754714424' %>
     </div>
-   </div>
-
-  <div class="form-group">
-    <div class="col-lg-8">
+    <div class="col-lg-3">
       <%= f.time_field :timeline, :class => 'form-control', placeholder: 'eg. F546H7878J89' %>
     </div>
-  </div>
+   </div>
 
   <div class="form-group">
     <div class="col-lg-11">
@@ -85,7 +83,7 @@
 </br>  
          <p>  <%= simple_format task.description  %> </p>
 
-         Dateline: <i> <%=  task.dateline.strftime("%B %d %Y") %> <%= task.timeline.strftime("%H %M") %>  </i>
+         Dateline: <i> <%=  task.dateline.strftime("%B %d, %Y") %> at <%= task.timeline.strftime("%H %M") %>  </i>
 </td>
 
 
